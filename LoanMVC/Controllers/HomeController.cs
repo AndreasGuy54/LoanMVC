@@ -16,7 +16,16 @@ namespace LoanMVC.Controllers
         [HttpGet]
         public IActionResult MortgagePage()
         {
-            return View();
+            Loan model = new();
+
+            model.Payment = 0;
+            model.TotalInterest = 0;
+            model.TotalCost = 0;
+            model.Rate = 3.5;
+            model.Amount = 15000;
+            model.Term = 60;
+
+            return View(model);
         }
 
         [HttpPost]
