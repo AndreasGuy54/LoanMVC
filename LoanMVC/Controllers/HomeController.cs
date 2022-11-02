@@ -1,4 +1,5 @@
-﻿using LoanMVC.Models;
+﻿using LoanMVC.Helpers;
+using LoanMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -30,9 +31,12 @@ namespace LoanMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult MortgagePage(Loan loan)
+        public IActionResult MortgagePage(Loan model)
         {
-            return View(loan);
+            LoanHelper loanHelper = new();
+
+            Loan newLoan = loanHelper.GetPayments(model);
+            return View(newLoan);
         }
 
         public IActionResult Index()
