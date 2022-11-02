@@ -22,9 +22,9 @@ namespace LoanMVC.Controllers
             model.Payment = 0;
             model.TotalInterest = 0;
             model.TotalCost = 0;
-            model.Rate = 3.5;
-            model.Amount = 15000;
-            model.Term = 60;
+            model.Rate = 10M;
+            model.Amount = 10000;
+            model.Term = 12;
 
             return View(model);
         }
